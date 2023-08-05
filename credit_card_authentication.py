@@ -15,8 +15,12 @@ label = Label(root, image=img)
 
 
 def authentication():
-        input_value = int(input_box.get())
-        messagebox.showinfo("Alert","Credit card accepted.")
+        try:
+          input_value = int(input_box.get())
+          messagebox.showinfo("Alert","Credit card accepted.")
+        except(ValueError):
+             messagebox.showinfo("Error" , Warning)
+
 
 
 btn = Button(root, text = "check credit card", command = authentication)
